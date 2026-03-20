@@ -4,5 +4,5 @@
   "version": "1.0.0",
   "engines": { "node": ">=20" },
   "scripts": { "start": "N8N_PORT=$PORT n8n start" },
-  "dependencies": { "n8n": "^1.0.0" }
+  "dependencies": { "n8n": "2.13.1" }
 }
