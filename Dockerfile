@@ -7,14 +7,16 @@ ENV GENERIC_TIMEZONE=Asia/Kolkata
 # Root user bano tools install karne ke liye
 USER root
 
-# FFmpeg, Python3, wget sab install karo
-RUN apk add --no-cache \
+# FFmpeg, Python3, wget sab install karo (DEBIAN style)
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     python3 \
-    py3-pip \
+    python3-pip \
+    python3-venv \
     wget \
     curl \
-    bash
+    bash \
+    && rm -rf /var/lib/apt/lists/*
 
 # edge-tts install karo (FREE voice generator)
 RUN pip3 install --break-system-packages \
